@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reklam ve Virüs Dedektörü</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    button {
+      background-color: #1f8b4c;
+      color: white;
+      padding: 15px 25px;
+      margin: 10px auto;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      min-width: 250px;
+      transition: background-color 0.3s ease;
+      display: block;
+    }
+    button:hover {
+      background-color: #146b38;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📱 Reklam ve Virüs Dedektörü</h1>
+
+  <button onclick="confirmStartScan('https://play.google.com/store/apps/details?id=org.malwarebytes.antimalware')">
+    🔍 Zararlı Uygulamalara Bak (Malwarebytes)
+  </button>
+
+  <button onclick="confirmStartScan('https://blokada.org')">
+    🚫 Reklam Engelleyici Kur (Blokada)
+  </button>
+
+  <button onclick="showDNS()">
+    🌐 DNS Ayarı Göster
+  </button>
+
+  <button onclick="showCookieClear()">
+    🍪 Çerezleri Temizle
+  </button>
+
+<script>
+  function confirmStartScan(url) {
+    const onay = confirm('Tarama başlıyor, emin misin?');
+    if (onay) {
+      window.location.href = url;
+    }
+  }
+
+  function showDNS() {
+    alert(
+      'DNS Ayarları:\n\n' +
+      'DNS 1: 94.140.14.14\n' +
+      'DNS 2: 94.140.15.15\n\n' +
+      'Ayarlar > Wi-Fi > Bağlı Ağa Dokun > Gelişmiş > IP Ayarları > Statik olarak değiştir\n' +
+      'DNS adreslerini bu şekilde gir.'
+    );
+  }
+
+  function showCookieClear() {
+    alert(
+      'Çerezleri Temizlemek İçin:\n\n' +
+      'Chrome > Ayarlar > Gizlilik > Tarama Verilerini Temizle > Tüm kutuları işaretleyip temizle.\n\n' +
+      'Alternatif olarak Brave tarayıcı kullanabilirsin, otomatik reklam ve çerez engeller.'
+    );
+  }
+</script>
+</body>
+</html>
